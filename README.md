@@ -28,40 +28,39 @@ Tsumiki is a Test Driven Development (TDD) framework originally designed for Cla
 
 ## Usage
 
-Once installed, you can use the commands directly in Gemini CLI.
+Once configured, you can use these commands within an active Gemini CLI session.
+First, start your Gemini CLI session (e.g., by running `gemini` or simply interacting with this agent), then type the commands as shown below.
 
 ### Basic Workflow
 
 1. **Initialize Tech Stack**:
-   ```bash
-   gemini /tsumiki:init-tech-stack
+   ```
+   /tsumiki:init-tech-stack
    ```
 
-2. **Start TDD Cycle (Interactive Script)**:
-   ```bash
-   ./commands/tdd-cycle-full.sh "Implement user login"
-   ```
+2. **Start TDD Cycle (Interactive Workflow)**:
+   The `tdd-cycle-full.sh` script in `commands/` is provided for users of Gemini CLI environments that support direct external invocation of commands (e.g., via a `gemini -p "..."` shell command). For this interactive Gemini CLI, you would manually execute the TDD phases as described below, or adapt the script to your specific environment's automation capabilities.
 
 3. **Manual Step-by-Step TDD**:
 
    - **Requirements**:
-     ```bash
-     gemini /tsumiki:tdd-requirements
+     ```
+     /tsumiki:tdd-requirements
      ```
    
    - **Red Phase (Write failing tests)**:
-     ```bash
-     gemini /tsumiki:tdd-red
+     ```
+     /tsumiki:tdd-red
      ```
    
    - **Green Phase (Implement code)**:
-     ```bash
-     gemini /tsumiki:tdd-green
+     ```
+     /tsumiki:tdd-green
      ```
    
    - **Refactor Phase**:
-     ```bash
-     gemini /tsumiki:tdd-refactor
+     ```
+     /tsumiki:tdd-refactor
      ```
 
 ### Available Commands
