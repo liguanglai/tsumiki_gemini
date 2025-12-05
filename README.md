@@ -4,27 +4,41 @@ Tsumiki is a Test Driven Development (TDD) framework originally designed for Cla
 
 ## Installation
 
-1. Clone this repository:
+### Global Installation (Recommended)
+
+This method installs Tsumiki globally into your `~/.gemini/` directory, making it available in all your projects.
+
+1. **Clone the repository:**
    ```bash
    git clone git@github.com:liguanglai/tsumiki_gemini.git
    ```
 
-2. Configure Gemini CLI to recognize the commands.
-   A `gemini-cli-config.toml` file has been provided in the repository root. This file contains the necessary configuration to include the Tsumiki commands.
-
-   **Option A (Project-specific)**: Copy `gemini-cli-config.toml` into your project's `.gemini/` directory.
+2. **Install to `~/.gemini/`:**
+   Move the cloned folder into your Gemini configuration directory.
    ```bash
-   cp tsumiki_gemini/gemini-cli-config.toml /path/to/your/project/.gemini/config.toml
+   # Create the directory if it doesn't exist
+   mkdir -p ~/.gemini
+   
+   # Move and rename the folder to 'tsumiki'
+   mv tsumiki_gemini ~/.gemini/tsumiki
    ```
-   *Note: If you already have a `config.toml` in your project, you'll need to manually merge the `[commands]` section from `gemini-cli-config.toml` into your existing file.*
 
-   **Option B (Global)**: Merge the content of `gemini-cli-config.toml` into your global gemini-cli configuration file (e.g., `~/.gemini/config.toml`).
-   ```toml
-   # Example of merging into your global ~/.gemini/config.toml
-   [commands]
-   include = ["/Users/ligl/02.workspaces/04.funny/tsumiki_gemini/commands"]
+3. **Configure Gemini CLI:**
+   Add the Tsumiki commands path to your global configuration file (`~/.gemini/config.toml`).
+
+   **If you don't have a config file yet:**
+   Copy the provided config file:
+   ```bash
+   cp ~/.gemini/tsumiki/gemini-cli-config.toml ~/.gemini/config.toml
    ```
-   *Always back up your global configuration before making changes.*
+
+   **If you already have a `~/.gemini/config.toml`:**
+   Edit it to add the Tsumiki commands path:
+   ```toml
+   [commands]
+   include = ["~/.gemini/tsumiki/commands"]
+   ```
+   *Note: Ensure you append this to your existing `[commands]` section if one exists.*
 
 ## Usage
 
