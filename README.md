@@ -10,17 +10,21 @@ Tsumiki is a Test Driven Development (TDD) framework originally designed for Cla
    ```
 
 2. Configure Gemini CLI to recognize the commands.
-   Depending on your Gemini CLI version, you might need to:
-   - **Option A**: Symlink or copy the files in `commands/` to your global Gemini commands directory (e.g., `~/.gemini/commands` or `~/.gemini/prompts`).
-   - **Option B**: Add the path to this repository's `commands` directory in your Gemini configuration file.
+   A `gemini-cli-config.toml` file has been provided in the repository root. This file contains the necessary configuration to include the Tsumiki commands.
 
-   For example, if using a configuration file (like `config.toml` or `.gemini/config`), add:
-   ```toml
-   [commands]
-   include = ["/path/to/tsumiki_gemini/commands"]
+   **Option A (Project-specific)**: Copy `gemini-cli-config.toml` into your project's `.gemini/` directory.
+   ```bash
+   cp tsumiki_gemini/gemini-cli-config.toml /path/to/your/project/.gemini/config.toml
    ```
+   *Note: If you already have a `config.toml` in your project, you'll need to manually merge the `[commands]` section from `gemini-cli-config.toml` into your existing file.*
 
-   *Note: Adjust the installation method based on your specific Gemini CLI environment.*
+   **Option B (Global)**: Merge the content of `gemini-cli-config.toml` into your global gemini-cli configuration file (e.g., `~/.gemini/config.toml`).
+   ```toml
+   # Example of merging into your global ~/.gemini/config.toml
+   [commands]
+   include = ["/Users/ligl/02.workspaces/04.funny/tsumiki_gemini/commands"]
+   ```
+   *Always back up your global configuration before making changes.*
 
 ## Usage
 

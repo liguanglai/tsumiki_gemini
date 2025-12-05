@@ -1,0 +1,9 @@
+# gemini-cli-config.toml
+
+# This file can be used to integrate Tsumiki Gemini commands into your gemini-cli setup.
+# You can either:
+# 1. Copy its content into your global gemini-cli configuration file (e.g., ~/.gemini/config.toml).
+# 2. Place this file directly into the .gemini/ directory of a project where you want to use Tsumiki.
+
+[commands]
+include = ["/Users/ligl/02.workspaces/04.funny/tsumiki_gemini/commands"]
